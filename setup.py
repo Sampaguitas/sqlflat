@@ -1,9 +1,21 @@
-from setuptools import setup, find_packages
+from setuptools import setup
+
+with open("README.rst", "r") as fh:
+    long_description = fh.read()
 
 setup(
     name='sqlflat',
-    version='1.0',
-    packages=find_packages(),
+    version='1.0.1',
+    description='A utility for converting SQL queries to a single line format',
+    long_description=long_description,
+    long_description_content_type="text/x-rst",
+    url='https://github.com/Sampaguitas/sqlflat',
+    packages=["sqlflat"],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
     entry_points={
         'console_scripts': [
             'sqlflat = sqlflat.parser:main',
@@ -12,9 +24,9 @@ setup(
     install_requires=[
         'regex>=2022.2.22',
     ],
+    python_requires=">=3.6",
     author='Timothee Desurmont',
     author_email='timothee.desurmont@sampaguitas.com',
-    description='A utility for converting SQL queries to a single line format',
+    long_description=open('README.md').read(),
     license='MIT',
-    url='https://github.com/Sampaguitas/sqlflat',
 )

@@ -1,3 +1,4 @@
 # ignore the dist and sqlparser.egg-info directories
 dist/
 sqlflat.egg-info/
+README.rst
